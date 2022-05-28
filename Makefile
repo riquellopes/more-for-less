@@ -11,3 +11,6 @@ bandit:
 
 test:
 	pytest -s -v
+
+scrapy:
+	scrapy crawl smiles -O itens.json
