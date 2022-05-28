@@ -26,3 +26,6 @@ jobs:
         pip cache purge
         pip install -r requirements.txt
         pip install -r requirements_test.txt
+    - name: Test with pytest
+      run: |
+        make test
