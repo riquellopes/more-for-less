@@ -8,3 +8,6 @@ clean:
 
 bandit:
 	bandit -r scrape --exclude tests
+
+test:
+	pytest -s -v
