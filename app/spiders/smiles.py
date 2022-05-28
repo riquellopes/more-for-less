@@ -13,7 +13,8 @@ class Smiles(scrapy.Spider):
         boxes = response.css("span.slider-item.box-produto")
 
         for box in boxes:
+            title = box.css("span.name-promocao-section-box span::text").extract_first()
             miles = box.css("span.num-ganhe::text").extract_first()
             price = box.css("span.preco-por.preco-por-acumulo:last-child::text").extract_first()
             url = box.css("a::attr(href)").extract_first()
-            yield Item(url=url, price=price, miles=miles)
+            yield Item(url=url, price=price, miles=miles, title=title)

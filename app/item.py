@@ -7,6 +7,7 @@ import scrapy
 
 
 class Item(scrapy.Item):
+    title = scrapy.Field()
     url = scrapy.Field()
     price = scrapy.Field()
     miles = scrapy.Field()
