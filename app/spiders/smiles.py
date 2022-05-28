@@ -4,6 +4,10 @@ from app.item import Item
 class Smiles(scrapy.Spider):
     name = 'smiles'
     allowed_domains = ['shoppingsmiles.com.br']
+    custom_settings = { 'DOWNLOD_DELAY': 1 }
+    start_urls = [
+        'https://www.shoppingsmiles.com.br/smiles/index.jsf?a=true',
+    ]
 
     def parse(self, response):
         boxes = response.css("span.slider-item.box-produto")
